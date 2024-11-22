@@ -1,4 +1,21 @@
 def restock_inventory(available_items, inventory_records, current_day):
+
+    max_stock = 2000 # Max t-shirt stock of 2000
+
+    if current_day == 0:
+        inventory_records.append([current_day, 0, 2000, 2000])
+    else:
+    # restocks after every 7 days
+        if current_day % 7 == 0:
+
+            # Calculates the amount needed to reach the max stock
+            restock_items = max_stock - available_items
+            
+            # Adds on the amount needed to restock to the current stock
+            available_items = 2000
+            
+            # Logs the amount of t-shirts getting restocked and available t-shirts for each day
+            inventory_records.append([current_day, 0, restock_items, available_items])
     
     
 
